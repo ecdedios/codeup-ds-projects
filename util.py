@@ -40,5 +40,28 @@ def summarize_df(df):
     print(df.head())
     print("\nEnd of Summary")
 
+def validate_tts(X_train, y_train, X_test, y_test):
+    if X_train.shape[0] == y_train.shape[0]:
+        print("X & y train rows ARE equal")
+    else:
+        print("X & y train rows ARE NOT equal")
+
+
+    if X_test.shape[0] == y_test.shape[0]:
+        print("X & y test rows ARE equal")
+    else:
+        print("X & y test rows ARE NOT equal")
+
+    if train.shape[1] == test.shape[1]:
+        print("Number of columns in train & test ARE equal")
+    else:
+        print("Number of columns in train & test ARE NOT equal")
+
+    train_split = train.shape[0] / (train.shape[0] + test.shape[0])
+    test_split = test.shape[0] / (train.shape[0] + test.shape[0])
+
+    print("Train Split: %.2f" % train_split)
+    print("Test Split: %.2f" % test_split)
+
 if __name__ == '__main__':
     print('Hello, Ada! Are you excited for early release?')
